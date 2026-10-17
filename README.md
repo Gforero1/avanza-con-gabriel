@@ -19,9 +19,13 @@ Web de una página, bilingüe (español por defecto, inglés con el botón EN), 
 
 ## Reservas
 
-Gabriel manda un enlace de Calendly distinto a cada cliente, así que todos los botones de reservar abren WhatsApp (+353 89 987 4365) con un mensaje ya escrito en el idioma de la página.
+Todos los botones de reservar llevan a la sección "Reserva", donde se carga el calendario de Calendly de Gabriel (calendly.com/gabrielforero) al pulsar "Ver horarios disponibles". No se carga nada de Calendly hasta que la persona lo pide. WhatsApp (+353 89 987 4365) queda solo para dudas.
+
+Botones: el principal es un trazo de rotulador (`.btn-mark`), los secundarios son enlaces subrayados (`.link-mark`). Sin cajas redondeadas.
 
 ## Pendiente
+
+- En Calendly: revisar que "Consulta de 45 minutos" dure 45 min (su enlace es /30min), crear la sesión de 1 hora y decidir cómo se cobra.
 
 - Dominio propio (por ejemplo avanzacongabriel.com).
 - Versión `/en/` como página propia con `hreflang` para SEO (ahora el inglés se cambia con JavaScript).
