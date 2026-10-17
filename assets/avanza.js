@@ -5,8 +5,8 @@
 
   var NUM = '353899874365';
   var WA = {
-    es: 'Hola Gabriel, vengo de tu web. Me gustaría reservar una sesión.',
-    en: 'Hi Gabriel, I found you through your website. I’d like to book a session.'
+    es: 'Hola Gabriel, vengo de tu web y tengo una duda sobre las sesiones.',
+    en: 'Hi Gabriel, I found you through your website and have a question about the sessions.'
   };
 
   // CV de ejemplo: los "después" son los ejemplos de la guía de Gabriel
@@ -35,26 +35,28 @@
     k2: 'CV & interviews',
     h1: '70% of CVs get rejected <span class="mk">in seconds</span>.',
     lead: 'We review your CV together, aim it at the role you want and prepare your interview. 1:1 sessions in English or Spanish.',
-    cta1: 'Book my session', cta2: 'Download the free guide',
-    cvLine: '<span>CV & interview coach</span><span>8 years in Big Tech | English · Español</span>', cvLab: 'Professional summary',
+    cta1: 'Book my session', cta2: 'or download the free guide',
+    cvLine: '<span>CV & interview coach</span><span>8 years in Big Tech</span><span>English · Español</span>', cvLab: 'Professional summary',
     cvText: 'Experience at <span class="mk">Airbnb, Amazon and Apple</span>. I help people prepare <span class="mk">CVs and interviews</span>.',
-    note: 'Step 1 of my guide: your details, at first glance.',
+    note: 'This is how a CV that reads in seconds starts.',
     altHero: 'Gabriel Forero holding his laptop', altPie: 'Gabriel standing, reviewing a CV on his laptop', altSofa: 'Gabriel smiling while working on his laptop',
     l1: 'Professional summary',
     summary: 'I’m Gabriel. I spent <span class="mk">8 years in Big Tech</span>, at Airbnb, Amazon and Apple, in customer support, onboarding and fraud. <span class="soft">Now I help people aged 23 to 28 living in Europe change jobs, with a CV that reads clearly the first time and interviews they’re ready for.</span>',
     d1t: 'Experience', d1d: '8 years in Big Tech', d2t: 'Areas', d2d: 'Customer support, onboarding and fraud', d3t: 'Sessions in', d3d: 'English and Spanish',
     l2: 'Before and after', baH: 'What changes in one session.',
-    baP: 'Three fixes from my guide on a sample CV. Switch versions and notice what a recruiter reads first.',
+    baP: 'This is what we work on in a session. Switch between the two versions of this CV and notice what a recruiter sees in the first few seconds.', cvTag: 'Example',
     swAria: 'CV version', vA: 'Before', vD: 'After',
-    r1l: 'Header', r1w: 'Step 1: your details, easy to find.', r2l: 'Summary', r2w: 'Steps 2 and 3: the role, your industry and top 3 skills.', r3l: 'Experience', r3w: 'Step 5: results with numbers, not tasks.',
-    baFoot: 'Sample CV. The “after” versions come from the free guide.',
+    r1l: 'Header', r1w: 'Role, nationality and contact on one line. Easy to find at a glance.', r2l: 'Summary', r2w: 'Lead with the role you’re applying for and what you do best.', r3l: 'Experience', r3w: 'A number convinces more than a task.',
     l3: '1:1 sessions', sH: 'You, your CV and the job you want.',
     w1h: 'CV review', w1p: 'We go through your CV point by point: header, summary, results with numbers, keywords from the job ad and a format ATS systems can read. We aim it at the roles you want to apply for.',
     w2h: 'Interview preparation', w2p: 'We prepare your next interview: how to introduce yourself, how to talk about your experience with concrete results and how to answer with confidence, including interviews in English.',
-    tLab: 'Rates', t1: '45-minute session', t2: '1-hour session', tNote: 'Either one works for your CV, your interview or both.', cta3: 'Request my session',
-    stAria: 'How to book', s1: 'Message me on WhatsApp', s1s: 'Tell me what you need and whether you prefer 45 minutes or an hour.',
-    s2: 'I send you your Calendly link', s2s: 'It’s just for you: pick the day and time that suit you best.',
-    s3: 'We meet for the session', s3s: 'Have your CV ready and, if you have one, the job ad you’re applying to.',
+    tLab: 'Rates', t1: '45-minute session', t2: '1-hour session', tNote: 'Either one works for your CV, your interview or both.', cta3: 'Pick a day and time',
+    l7: 'Booking', rH: 'Pick a day and time.',
+    stAria: 'How to book', s1: 'Choose a slot in my calendar', s1s: 'See my free times in your time zone and book in a minute.',
+    s2: 'You get a confirmation', s2s: 'With all the session details in your inbox.',
+    s3: 'We meet', s3s: 'Have your CV ready and, if you have one, the job ad you’re applying to.',
+    calK: 'Gabriel’s calendar', calT: 'My free times for the coming weeks.', calB: 'See available times',
+    calNote: 'The calendar is run by Calendly. If you prefer, <a href="https://calendly.com/gabrielforero" target="_blank" rel="noopener">open it in a new tab</a>.',
     stackAria: 'Open the guide as a PDF',
     l4: 'Free guide', gH: 'Check your CV before your next application.',
     g1: 'Your details in the header', g2: 'The role in your summary', g3: 'Industry and top 3 skills', g4: 'The vocabulary of the role', g5: 'Results with numbers',
@@ -63,8 +65,8 @@
     l5: 'References',
     q1: 'The session with Gabriel helped me improve my CV and be more strategic with my applications.',
     q2: '100% recommended. I didn’t know what I had to improve in my CV. Gabriel reviewed it with me and we aimed it at the jobs I want to apply for.',
-    l6: 'Contact', cH: 'Shall we review your <span class="mk">CV</span> together?',
-    cLead: 'Message me on WhatsApp and I’ll send you your booking link.',
+    l6: 'Contact', cH: 'Shall we talk about your <span class="mk">CV</span>?',
+    cLead: 'Any questions before you book? Message me and I’ll reply myself.',
     em: 'Email', copy: 'Copy', copied: 'Copied', footR: 'CV and interviews in English and Spanish',
     title: 'Avanza con Gabriel · CV and interviews'
   };
@@ -146,7 +148,7 @@
       es.forEach(function (e) {
         if (!e.isIntersecting) return;
         Array.prototype.forEach.call(steps, function (li, i) {
-          setTimeout(function () { li.classList.add('on'); }, 250 + i * 380);
+          setTimeout(function () { li.classList.add('on'); }, 200 + i * 450);
         });
         so.disconnect();
       });
@@ -155,6 +157,24 @@
   } else {
     each('.steps li', function (li) { li.classList.add('on'); });
   }
+
+  // ---- calendario de Calendly: se carga al pedirlo ----
+  var cal = document.getElementById('cal');
+  function openCal() {
+    if (!cal || cal.classList.contains('loaded')) return;
+    var f = document.createElement('iframe');
+    f.src = 'https://calendly.com/gabrielforero?embed_type=Inline&embed_domain=' + encodeURIComponent(location.hostname || 'avanzacongabriel.pages.dev') +
+      '&background_color=ffffff&text_color=131b2d&primary_color=1fa38a';
+    f.title = lang === 'en' ? 'Gabriel’s booking calendar' : 'Calendario de reservas de Gabriel';
+    f.loading = 'eager';
+    cal.innerHTML = '';
+    cal.appendChild(f);
+    cal.classList.add('loaded');
+  }
+  var openBtn = document.getElementById('cal-open');
+  if (openBtn) openBtn.addEventListener('click', openCal);
+  each('a[href="#reservar"]', function (a) { a.addEventListener('click', function () { setTimeout(openCal, 350); }); });
+  if (location.hash === '#reservar') openCal();
 
   // ---- copiar correo ----
   each('.copy', function (btn) {
